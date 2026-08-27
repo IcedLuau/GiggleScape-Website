@@ -1,0 +1,60 @@
+:root {
+    --background: oklch(30.64% 0.04168 144.513);
+    --acent: greenyellow;
+}
+
+@keyframes earth {
+    0% {
+        rotate: y 0deg;
+    }
+    50% {
+        rotate: y 180deg;
+    }
+    100% {
+        rotate: y 360deg;
+    }
+}
+
+body {
+    background-color: var(--background);
+    font-family: sans-serif;
+    color: white;
+    padding: 50px;
+    perspective: 500px;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: var(--acent);
+}
+
+blockquote {
+    background: oklch(from var(--background) 40% c h);
+    border-left: 5px solid var(--acent);
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+    rotate: x -10deg;
+    animation: earth 2s linear 0s infinite;
+  }
+
+button {
+    /* 1. Reset standard browser defaults */
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background: none;
+    padding: 10px;
+    font: inherit;
+    cursor: pointer;
+
+    background-image: linear-gradient(0deg, green, greenyellow);
+    border-radius: 10px;
+    border: 1px solid black;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    animation: earth 2s linear 0s infinite;
+}
+
+button:hover {
+    transform: rotateX(45deg);
+}
